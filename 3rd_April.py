@@ -70,25 +70,12 @@
 
 #5
 word = "zjpc"
-alpha='abcdefghijklmnopqrstuvwxyz'
-dicti={}
-rev={}
-p=1
-for i in range(len(alpha)):
-    dicti[alpha[i]]=i+1
-for i in range(25,-1,-1):
-    rev[alpha[i]]=abs(i-27)
-print(rev, dicti)
-dist=0
-for j in word:
-    clock=abs(p-dicti[j])
-    anti=abs(1-rev[j])+abs(p-1)
-    print(clock, anti)
-    if anti>clock:
-        p=clock+1
-        print(dicti[p])
-        dist+=clock
-    else:
-        p=anti+1
-        dist+=anti
+dist=len(word)
+p="a"
+for i in word:
+    l=(ord(i)-ord(p))%26
+    dist+=min(l, 26-l)
+    p=i
     print(dist)
+
+
