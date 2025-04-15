@@ -125,7 +125,3 @@ l1= (list(dicti1.values()))
 l2= (list(dicti2.values()))
 print(l1, l2)
 print (sorted(l1)==sorted(l2))
-    #     print(l1, l2)
-    #     print (True)
-    # else:
-    #     print (False)
